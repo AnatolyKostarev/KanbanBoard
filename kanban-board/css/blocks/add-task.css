@@ -1,0 +1,68 @@
+.add-task {
+  align-self: start;
+  margin-bottom: 32px;
+  padding: 25px 21px;
+
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+.add-task label {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+
+  user-select: none;
+}
+
+.add-task__form {
+  display: flex;
+  align-items: center;
+}
+
+.add-task__input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task__form input {
+  width: 211px;
+  margin-right: 17px;
+  padding: 15px 11px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-main-color);
+
+  transition: var(--animation);
+
+}
+
+.add-task__form input:focus,
+.add-task__form input:active {
+  outline: none;
+  border-color: var(--input-border-active-color);
+}
+
+.add-task__form input::placeholder {
+  font-weight: 400;
+  color: var(--inactive-color);
+}
+
+.add-task__form input:focus::placeholder {
+  opacity: 0;
+}
+
+.add-task__button {
+  align-self: flex-end;
+
+  margin-bottom: 1px;
+
+  background-color: var(--main-blue);
+}
+

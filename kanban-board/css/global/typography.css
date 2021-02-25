@@ -1,0 +1,23 @@
+body {
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

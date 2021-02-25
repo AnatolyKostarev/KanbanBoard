@@ -1,0 +1,172 @@
+.task {
+  position: relative;
+  width: 100%;
+  padding: 16px 14px;
+  display: flex;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+
+  border-left: 6px solid var(--light-gray);
+  border-radius: 8px;
+  background-color: #ffffff;
+
+  transition: var(--animation);
+}
+
+.task--processing {
+  border-color: var(--light-blue);
+}
+
+.task--done {
+  border-color: var(--light-green);
+}
+
+.task--basket {
+  border-color: var(--light-red);
+}
+
+.task:hover {
+  cursor: pointer;
+}
+
+.task p {
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+  word-break: break-word;
+}
+
+.task p:focus {
+  outline: none;
+}
+
+.task p[contenteditable] {
+  border-bottom: 1px solid var(--input-border-active-color);
+}
+
+.task p[contenteditable]:hover {
+  cursor: text;
+}
+
+.task::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -6px;
+  right: 0;
+  content: "";
+  border: 0 solid var(--task-active-border-color);
+  border-radius: 8px;
+  transition: var(--animation);
+  pointer-events: none;
+}
+
+.task:hover::after,
+.task--active::after {
+  border-width: 1px;
+}
+
+.task--empty::after {
+  display: none;
+}
+
+.task:hover .task__edit {
+  opacity: 0.7;
+}
+
+.task:hover .task__edit:hover {
+  opacity: 1;
+}
+
+.task--active .task__edit,
+.task--active:hover .task__edit {
+  opacity: 1;
+  background-image: url("../../img/edit-active.svg");
+}
+
+.task--dragged {
+  /*filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));*/
+  padding: 16px 14px;
+  color: var(--inactive-color);
+  border: 1px dashed var(--inactive-color);
+  background-color: transparent;
+}
+
+.task--dragged::after {
+  display: none;
+}
+
+.task--empty {
+  padding: 15px 19px;
+  color: var(--inactive-color);
+  border: 1px dashed var(--inactive-color);
+  background-color: transparent;
+}
+
+.task--empty:hover {
+  cursor: default;
+}
+
+.task__body {
+  flex: 1;
+}
+
+.task__edit {
+  position: relative;
+  z-index: 2;
+  margin-left: 8px;
+  flex-shrink: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--animation);
+  background-image: url("../../img/edit.svg");
+  opacity: 0;
+}
+
+.task__edit:active,
+.task__edit:focus {
+  outline: none;
+}
+
+.task--empty-trash {
+  margin-bottom: 8px;
+}
+
+.hidden-block {
+  display: none;
+}
+
+.task--input {
+  display: none;
+  height: 24px;
+  width: 100%;
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid #d6d6d6;
+  color: var(--text-main-color);
+  transition: var(--animation);
+}
+
+.task--input:focus,
+.task--input:active {
+  outline: none;
+  border-color: var(--input-border-active-color)
+}
+
+.task--view {
+  padding: 2px 0;
+}
+
+.task--active .task--view {
+  display: none;
+}
+
+.task--active .task--input {
+  display: block;
+}

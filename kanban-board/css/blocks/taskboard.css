@@ -1,0 +1,74 @@
+.taskboard {
+  width: 100%;
+  /* height: calc(100vh - 345px); */
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskboard__list {
+  margin: 0;
+  padding: 0;
+  /* max-height: calc(100% - 56px); */
+  list-style: none;
+}
+
+
+.taskboard__group-heading {
+  align-self: flex-start;
+  margin-bottom: 16px;
+  padding: 10px 18px;
+  padding-top: 12px;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 8px;
+  cursor: default;
+  user-select: none;
+}
+
+.taskboard__group-heading--backlog {
+  color: #6a6a6a;
+  background-color: var(--light-gray);
+}
+
+.taskboard__group-heading--processing {
+  color: var(--main-blue);
+  background-color: var(--light-blue);
+}
+
+.taskboard__group-heading--done {
+  color: #65b670;
+  background-color: var(--light-green);
+}
+
+.taskboard__group-heading--basket {
+  color: var(--red);
+  background-color: var(--light-red);
+}
+
+.taskboard__item {
+  margin-bottom: 8px;
+}
+
+.taskboard__group {
+  width: calc((100% - (40px * 3)) / 4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskboard__button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+}
+
+.taskboard__group--trash .taskboard__list {
+  max-height: calc(100% - 55px - 54px);
+}
+
+.taskboard__list--trash li:last-of-type {
+  margin-bottom: 0;
+}
